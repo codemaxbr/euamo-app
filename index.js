@@ -14,7 +14,7 @@ import {colors} from './src/assets/theme.json'
 import {ThemeProvider} from 'styled-components'
 import {Provider as PaperProvider, Text} from 'react-native-paper'
 
-import Login from './src/pages/Login';
+import Router from './src/routes';
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);
 // It also ensures that whether you load the app in Expo Go or in a native build,
@@ -35,7 +35,7 @@ const App = () => {
 		return (
 			<ThemeProvider theme={colors}>
 				<PaperProvider>
-					<Login />
+					<Router />
 				</PaperProvider>
 			</ThemeProvider>
 		)

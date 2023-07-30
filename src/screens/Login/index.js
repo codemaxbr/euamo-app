@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {Image, Text} from "react-native"
-import {Title, Box, Logo, TextDescription, BtnLogin, TextInput, Label, TextHintSocial, SocialArea, BtnCadastro, BtnRecuperarSenha} from './components/styles'
+import {Image, Text, StatusBar} from "react-native"
+import {Title, Box, Logo, TextDescription, BtnLogin, TextInput, Label, TextHintSocial, SocialArea, BtnCadastro, BtnRecuperarSenha} from './styles'
 import logo from '../../assets/images/logo.png'
 
 const Index = () => {
@@ -8,6 +8,8 @@ const Index = () => {
 
 	return (
 		<>
+			<StatusBar backgroundColor='white' barStyle="dark-content" />
+
 			<Box justify="center" hasPadding>
 				<Logo top="30px" source={logo} />
 
