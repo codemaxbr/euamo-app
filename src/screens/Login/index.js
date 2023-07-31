@@ -24,10 +24,12 @@ const Index = () => {
 	const navigation = useNavigation()
 
 	const onLogin = () => {
-		setIsLoading(!isLoading);
+		setIsLoading(true);
 
 		setTimeout(() => {
-			setIsLoading(false);
+			navigation.reset({
+				routes: [{name: 'MainTab'}]
+			})
 		}, 3000)
 	}
 

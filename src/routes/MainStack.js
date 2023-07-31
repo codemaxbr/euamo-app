@@ -4,6 +4,7 @@ import { CardStyleInterpolators, createStackNavigator } from "@react-navigation/
 import Preload from '../screens/Preload'
 import Login from '../screens/Login'
 import Register from '../screens/Register'
+import MainTab from "./MainTab";
 
 const Stack = createStackNavigator()
 
@@ -18,5 +19,6 @@ export default () => (
         <Stack.Screen name="Preload" component={Preload} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="MainTab" component={MainTab} />
     </Stack.Navigator>
 )

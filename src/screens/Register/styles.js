@@ -15,7 +15,8 @@ export const CheckboxTermos = styled(BouncyCheckbox).attrs(props => ({
     innerIconStyle: { borderWidth: 1, borderRadius: 2 },
     textStyle: { 
         fontSize: 14,
-        textDecorationLine: "none"
+        textDecorationLine: "none",
+		paddingRight: 10,
     }
 }))`
     margin-top: 20px;
