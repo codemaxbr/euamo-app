@@ -4,7 +4,6 @@ import {
 	Button as ButtonPaper,
 	TextInput as TextInputPaper,
 } from "react-native-paper";
-import {Quicksand_700Bold} from "@expo-google-fonts/quicksand";
 
 export const Box = styled.View`
 	flex: 1;
@@ -60,9 +59,23 @@ export const BtnLogin = styled(ButtonPaper).attrs(props => ({
 		letterSpacing: -1,
 		fontSize: 18,
 		marginBottom: 12
-	}
+	},
 }))`
 	margin-top: 30px;
+`
+
+export const TextRegisterLink = styled.Text`
+	font-family: 'Quicksand_700Bold';
+	color: #f85f6a;
+	font-size: 19px;
+	letter-spacing: -0.5px;
+`
+
+export const TextRecuperarSenha = styled.Text`
+	font-family: 'Quicksand_600SemiBold';
+	color: #989eb1;
+	font-size: 17px;
+	letter-spacing: -0.5px;
 `
 
 export const BtnCadastro = styled(ButtonPaper).attrs(props => ({

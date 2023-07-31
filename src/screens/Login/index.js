@@ -1,10 +1,41 @@
-import * as React from 'react';
-import {Image, Text, StatusBar} from "react-native"
-import {Title, Box, Logo, TextDescription, BtnLogin, TextInput, Label, TextHintSocial, SocialArea, BtnCadastro, BtnRecuperarSenha} from './styles'
+import React, {useState} from 'react';
+import {Image, Text, StatusBar, TouchableOpacity} from "react-native"
+import { useNavigation } from '@react-navigation/native';
+import {
+	Title, 
+	Box, 
+	Logo, 
+	TextDescription, 
+	BtnLogin, 
+	TextRegisterLink, 
+	TextInput, 
+	Label, 
+	TextHintSocial, 
+	SocialArea, 
+	BtnCadastro, 
+	TextRecuperarSenha
+} from './styles'
 import logo from '../../assets/images/logo.png'
 
 const Index = () => {
-	const [text, setText] = React.useState('')
+	const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
+	const [isLoading, setIsLoading] = useState(false);
+	const navigation = useNavigation()
+
+	const onLogin = () => {
+		setIsLoading(!isLoading);
+
+		setTimeout(() => {
+			setIsLoading(false);
+		}, 3000)
+	}
+
+	const goToRegister = () => {
+		navigation.reset({
+			routes: [{name: 'Register'}]
+		})
+	}
 
 	return (
 		<>
@@ -17,16 +48,29 @@ const Index = () => {
 				<TextDescription>Olá! Bom ver você de novo.</TextDescription>
 
 				<Label top="30px">Endereço de e-mail</Label>
-				<TextInput mode="outlined" autoFocus={false} />
+				<TextInput 
+					mode="outlined" placeholder='Digite seu e-mail' autoFocus={false} 
+					value={email} onChangeText={t => setEmail(t)}
+				/>
 
 				<Label>Senha</Label>
-				<TextInput mode="outlined" secureTextEntry autoFocus={false} />
+				<TextInput 
+					mode="outlined" placeholder='Sua senha' secureTextEntry autoFocus={false} 
+					value={password} onChangeText={t => setPassword(t)}
+				/>
 
-				<BtnLogin block>Entrar</BtnLogin>
+				<BtnLogin block loading={isLoading} disabled={isLoading} onPress={onLogin}>
+					{isLoading ? "Carregando..." : "Entrar"}
+				</BtnLogin>
 
 				<SocialArea row justify="space-between">
-					<BtnRecuperarSenha>Esqueceu sua senha?</BtnRecuperarSenha>
-					<BtnCadastro>Cadastre-se</BtnCadastro>
+					<TouchableOpacity onPress={() => console.log('Recuperar senha')}>
+						<TextRecuperarSenha>Esqueceu sua senha?</TextRecuperarSenha>
+					</TouchableOpacity>
+				
+					<TouchableOpacity onPress={goToRegister}>
+						<TextRegisterLink>Cadastre-se</TextRegisterLink>
+					</TouchableOpacity>
 				</SocialArea>
 			</Box>
 		</>
