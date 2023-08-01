@@ -18,7 +18,6 @@ export default () => (
     >
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Search" component={Search} />
-        <Tab.Screen name="License" component={License} />
         <Tab.Screen name="Vouchers" component={Vouchers} />
         <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
