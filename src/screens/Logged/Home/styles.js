@@ -43,5 +43,4 @@ export const Touchable = styled.TouchableOpacity`
     background: ${(props) => props.background || 'transparent'};
     border-radius: ${(props) => props.radius || 0};
     border: ${(props) => props.border || 'none'};
-    elevation: 3;
 `

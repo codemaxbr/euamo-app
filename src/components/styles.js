@@ -12,6 +12,27 @@ export const TopContainer = styled.SafeAreaView`
 	box-shadow: 10px 5px 5px #000;
 `
 
+export const Container = styled.View`
+	flex: 1;
+	flex-wrap: ${(props) => props.wrap || 'nowrap'};
+	flex-direction: ${(props) => (props.row ? 'row' : 'column')};
+	justify-content: center;
+	align-items: center;
+
+	width: ${(props) => props.width || '100%'};
+	max-width: ${(props) => props.width || '100%'};
+	min-width: ${(props) => props.width || '100%'};
+
+	height: ${(props) => props.height || 'auto'};
+	max-height: ${(props) => props.height || 'auto'};
+	min-height: ${(props) => props.height || 'auto'};
+
+	padding: ${(props) => (props.hasPadding ? '15px' : '0px')};
+	margin: ${(props) => props.spacing || 0};
+	border-radius: ${(props) => (props.spacing ? '4px' : '0px' )};
+	border: ${(props) => props.border || 'none' };
+`
+
 export const TabArea = styled.View`
     height: 60px;
     background-color: #fff;

@@ -16,8 +16,11 @@ export default () => {
             <LocationBar />
 
             <ScrollView>
-                <Container hasPadding>
-                    <BannerAdsTop />
+                <Container>
+                    <Container hasPadding>
+                        <BannerAdsTop />
+                    </Container>
+                    
                     <TypesList />
                 </Container>
             </ScrollView>

@@ -5,7 +5,7 @@ import {Container, Touchable} from "../styles"
 
 export default () => {
     return (
-        <Container spacing="15px 0">
+        <Container>
             <FlatList
                 data={['Eventos', 'Comércios', 'Serviços']} horizontal
                 keyExtractor={(item) => item}
@@ -13,9 +13,9 @@ export default () => {
                 renderItem={({item}) => (
                     <Touchable
                         key={item}
-                        width="150px"
+                        width="108px"
                         height="40px"
-                        spacing="0 10px 0 0"
+                        spacing="0 5px 0 5px"
                         radius="5px"
                         direction="column"
                         justify="center"
