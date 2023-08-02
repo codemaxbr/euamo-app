@@ -22,25 +22,24 @@ export default () => {
     ]
 
     return (
-        <Container spacing="10px 0 0">
+        <Container row spacing="15px 0">
             <FlatList
-                data={tipos} horizontal
+                data={tipos}
                 keyExtractor={(item) => `${item.id}`}
                 showsHorizontalScrollIndicator={false}
                 contentContainerStyle={{
                     paddingLeft: 15,
-                    paddingRight: 5
+                    paddingRight: 15
                 }}
                 renderItem={({item, index}) => {
 
                     return (
                         <Touchable
                             key={index}
-                            width="100px"
                             height="70px"
-                            spacing="0 10px 0 0"
-                            radius="5px"
-                            direction="column"
+                            spacing="5px 0"
+                            radius="8px"
+                            direction="row"
                             justify="center"
                             align="center"
                             background="#fff"

@@ -9,7 +9,7 @@ import NotificationIcon from '../assets/images/icons/bell.svg'
 
 export default () => {
     return (
-        <TopContainer>
+        <TopContainer background="#d62c4e" elevation="10">
             <LocationArea>
                 <LocationFinder>
                     <LocationIcon width="24" height="24" fill="#fff" />

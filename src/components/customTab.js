@@ -35,7 +35,7 @@ export default ({state, navigation}) => {
                     <SearchFilledIcon width="24" height="24" fill="#666" /> :
                     <SearchIcon width="24" height="24" fill="#fff" />
                 }
-                <TextIcon>Buscar</TextIcon>
+                <TextIcon>Explorar</TextIcon>
             </TabItem>
 
             <TabItem onPress={() => goTo('Vouchers')}>

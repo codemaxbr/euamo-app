@@ -1,5 +1,5 @@
 import React from "react";
-import {FlatList, Text} from "react-native"
+import {FlatList, Image, Text} from "react-native"
 
 import {Container, Touchable} from "../styles"
 
@@ -13,38 +13,43 @@ import HouseIcon from '../../../../assets/images/icons/house2.svg'
 
 export default () => {
     const tipos = [
-        {id: 1, name: 'Eventos', icon: 'event'},
-        {id: 2, name: 'Comércios', icon: 'market'},
-        {id: 3, name: 'Serviços', icon: 'services'},
-        {id: 4, name: 'Restaurantes', icon: 'restaurant'},
-        {id: 5, name: 'Oficinas', icon: 'autocenter'},
-        {id: 6, name: 'Imóveis', icon: 'house'},
+        {id: 5, name: 'Oficinas', image: 'https://i.imgur.com/SNZxqhr.jpeg'},
+        
+        {id: 2, name: 'Comércios', image: 'https://i.imgur.com/5ocDIEZ.jpeg'},
+        {id: 3, name: 'Serviços', image: 'https://i.imgur.com/F7rj2e9.jpeg'},
+        {id: 4, name: 'Restaurantes', image: 'https://i.imgur.com/evhDZBB.jpeg'},
+        
     ]
 
     return (
-        <Container spacing="10px 0 0">
+        <Container>
             <FlatList
                 data={tipos} horizontal
                 keyExtractor={(item) => `${item.id}`}
                 showsHorizontalScrollIndicator={false}
                 contentContainerStyle={{
                     paddingLeft: 15,
-                    paddingRight: 5
+                    paddingRight: 5,
+                    paddingTop: 0,
+                    paddingBottom: 20
                 }}
                 renderItem={({item, index}) => {
 
                     return (
                         <Touchable
                             key={index}
-                            width="100px"
-                            height="70px"
+                            width="270px"
+                            height="250px"
                             spacing="0 10px 0 0"
-                            radius="5px"
+                            radius="10px"
                             direction="column"
                             justify="center"
                             align="center"
                             background="#fff"
                             border="1px solid #e5e5e5"
+                            style={{
+                                overflow: 'hidden', elevation: 3
+                            }}
                         >
                             {item.icon === 'event' ? <EventIcon width="24px" height="24px" fill="#f85f6a" /> : ''}
                             {item.icon === 'market' ? <Shop2Icon width="24px" height="24px" color="#f85f6a" /> : ''}
@@ -53,9 +58,7 @@ export default () => {
                             {item.icon === 'autocenter' ? <AutoCenterIcon width="24px" height="24px" fill="#f85f6a" /> : ''}
                             {item.icon === 'house' ? <HouseIcon width="24px" height="24px" fill="#f85f6a" /> : ''}
 
-                            <Text style={{fontWeight: 400, fontSize: 14, marginTop: 6}}>
-                                {item.name}
-                            </Text>
+                            <Image width={270} height={249} source={{uri: item.image}} />
                         </Touchable>
                     )
                 }}
